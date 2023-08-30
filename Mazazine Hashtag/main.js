@@ -1,3 +1,6 @@
+import { inicializarCarrinho } from "./src/menuCarrinho";
+
+
 const catalogo = [
     { id: 1, marca: 'Zara', nome: 'Camisa Larga com Bolsos', preco: 70, imagem: 'product-1.jpg', feminino: false, }, 
     { id: 2, marca: 'Zara', nome: 'Casaco Reto com Lã', preco: 85, imagem: 'product-2.jpg', feminino: true, },
@@ -11,9 +14,9 @@ const catalogo = [
 
 
 for (const produtoCatalago of catalogo){
-    const cartaoProduto =  `<div id="card-produto-1">
+    const cartaoProduto =  `<div class= "border-solid border-2 border-sky-500 w-48 m-2" id="card-produto-${produtoCatalago.id}">
 <img src="./assets/img/${produtoCatalago.imagem}" alt="Produto 1" style="height: 300px"/>
-<p>${produtoCatalago.marca}</p>
+<p class='marca'>${produtoCatalago.marca}</p>
 <p>${produtoCatalago.nome}</p>
 <p>$${produtoCatalago.preco}</p>
 <button>Adicionar</button>
@@ -22,3 +25,4 @@ for (const produtoCatalago of catalogo){
     document.getElementById("container-produto").innerHTML += cartaoProduto;
 };
 
+inicializarCarrinho();
